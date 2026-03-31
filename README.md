@@ -6,9 +6,9 @@ A fully customized minimal Firefox setup. Clone and run one script to restore ev
 
 ## What it includes
 
-- No horizontal tab bar — tabs moved to a vertical auto-hiding sidebar
-- Vertical sidebar slides in when you hover the left edge, overlays the page (no content shrinking)
-- No back/forward buttons, no reload button, no window controls
+- Compact horizontal tab bar — minimal styling, transparent unselected tabs
+- Styled window controls (minimize/maximize/close) — subtle at rest, hover effects, red close on hover
+- No back/forward buttons, no reload button
 - No site identity / "Verified by" icon in the URL bar
 - Minimal bookmarks toolbar centered under the URL bar
 - Custom new tab page — clean blank page showing your bookmarks with favicons, no Firefox search bar
@@ -100,7 +100,6 @@ These are applied automatically by `setup.ps1`. For reference:
 | Preference | Value | Why |
 |---|---|---|
 | `toolkit.legacyUserProfileCustomizations.stylesheets` | `true` | Enables userChrome.css |
-| `sidebar.verticalTabs` | `true` | Enables native vertical tabs |
 | `extensions.autoDisableScopes` | `0` | Allows sideloaded extensions |
 | `extensions.startupScanScopes` | `15` | Scans profile extensions folder on startup |
 

@@ -4,11 +4,33 @@
    ============================================= */
 
 
-/* --- WINDOW CONTROLS (hide X, minimize, maximize) --- */
-.titlebar-buttonbox-container,
-.titlebar-buttons,
+/* --- STYLED WINDOW CONTROLS --- */
+.titlebar-buttonbox-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .titlebar-button {
-  display: none !important;
+  padding: 4px 14px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  opacity: 0.6 !important;
+  transition: opacity 0.15s ease, background-color 0.15s ease !important;
+}
+
+.titlebar-button:hover {
+  opacity: 1 !important;
+}
+
+.titlebar-close:hover {
+  background-color: rgba(232, 17, 35, 0.9) !important;
+  opacity: 1 !important;
+}
+
+.titlebar-min:hover,
+.titlebar-max:hover,
+.titlebar-restore:hover {
+  background-color: rgba(128, 128, 128, 0.3) !important;
 }
 
 
@@ -23,7 +45,7 @@
 }
 
 
-/* --- HIDE SITE IDENTITY ICON --- */
+/* --- HIDE URL BAR ICONS --- */
 #identity-box,
 #identity-icon,
 #identity-icon-label,
@@ -31,20 +53,11 @@
 #tracking-protection-icon-container,
 #page-proxy-favicon,
 #trust-icon,
-#trust-icon-container {
+#trust-icon-container,
+#star-button-box,
+#taskbar-tabs-button {
   display: none !important;
   visibility: collapse !important;
-  width: 0 !important;
-  overflow: hidden !important;
-}
-
-#urlbar[pageproxystate] #identity-box {
-  display: none !important;
-  visibility: collapse !important;
-}
-
-.urlbar-input-container #identity-box {
-  display: none !important;
 }
 
 
@@ -62,18 +75,6 @@
   box-shadow: none !important;
 }
 
-
-/* --- HIDE RELOAD BUTTON --- */
-#reload-button {
-  display: none !important;
-}
-
-
-/* --- HIDE BACK/FORWARD BUTTONS --- */
-#back-button,
-#forward-button {
-  display: none !important;
-}
 
 
 /* --- MINIMAL BOOKMARKS TOOLBAR --- */
@@ -105,58 +106,27 @@
 }
 
 
-/* --- HIDE HORIZONTAL TAB BAR --- */
+/* --- COMPACT HORIZONTAL TABS --- */
 #TabsToolbar {
+  padding-block: 0 !important;
+}
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
   display: none !important;
 }
 
-
-/* --- VERTICAL TABS (auto-hide overlay) --- */
-
-#sidebar-box {
-  min-width: 2px !important;
-  max-width: 2px !important;
-  position: relative !important;
-  z-index: 10 !important;
-  transition: min-width 0.2s ease, max-width 0.2s ease, margin 0.2s ease !important;
-}
-
-#sidebar-box:hover {
-  min-width: 200px !important;
-  max-width: 200px !important;
-  margin-inline-end: -198px !important;
-}
-
-#sidebar-header,
-#sidebar-switcher-target,
-#sidebar-close-button,
-#sidebar-launcher,
-.sidebar-launcher,
-.sidebar-panel-footer,
-.sidebar-bottom-actions,
-.tools-and-extensions {
-  display: none !important;
-}
-
-#sidebar {
-  border-inline-end: none !important;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.15) !important;
-}
-
-/* Remove leftover separator from removed bottom icons */
-#sidebar-tools-and-extensions-splitter,
-#sidebar hr,
-#sidebar .separator,
-#sidebar-box hr,
-#sidebar-box .separator {
-  display: none !important;
+.tabbrowser-tab:not([selected]) .tab-background {
+  background: transparent !important;
+  box-shadow: none !important;
   border: none !important;
 }
 
-
-/* --- HIDE TITLE BAR --- */
-#titlebar {
-  display: none !important;
+.tabbrowser-tab[selected] .tab-background {
+  box-shadow: none !important;
+  border: none !important;
 }
 
-
+#tabs-newtab-button {
+  padding-inline: 6px !important;
+}

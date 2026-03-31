@@ -11,14 +11,26 @@ if (-not (Test-Path $profilesPath)) {
     exit 1
 }
 
-$profile = Get-ChildItem $profilesPath -Directory | Where-Object { $_.Name -like "*.default-release" } | Select-Object -First 1
+$profilesIni = "$env:APPDATA\Mozilla\Firefox\profiles.ini"
+$profilePath = $null
 
-if (-not $profile) {
+if (Test-Path $profilesIni) {
+    $iniContent = Get-Content $profilesIni
+    $inInstall = $false
+    foreach ($line in $iniContent) {
+        if ($line -match "^\[Install") { $inInstall = $true }
+        elseif ($line -match "^\[") { $inInstall = $false }
+        if ($inInstall -and $line -match "^Default=Profiles/(.+)") {
+            $profilePath = "$profilesPath\$($Matches[1])"
+            break
+        }
+    }
+}
+
+if (-not $profilePath -or -not (Test-Path $profilePath)) {
     Write-Error "No default Firefox profile found. Open Firefox at least once first."
     exit 1
 }
-
-$profilePath = $profile.FullName
 Write-Host "Found profile: $profilePath"
 
 # --- Apply files ---
@@ -42,7 +54,7 @@ if (Test-Path $xpiPath) {
     Copy-Item $xpiPath "$extensionsPath\newtab@georg-davidson-firefox.xpi" -Force
     Write-Host "Installed new tab extension"
 } else {
-    Write-Warning "extension\newtab-signed.xpi not found — skipping new tab setup."
+    Write-Warning "extension\newtab-signed.xpi not found - skipping new tab setup."
     Write-Warning "See README.md for how to sign and add the extension."
 }
 
