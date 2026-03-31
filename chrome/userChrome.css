@@ -1,0 +1,162 @@
+/* =============================================
+   FIREFOX MINIMAL — userChrome.css
+   Drop this in: <profile>/chrome/userChrome.css
+   ============================================= */
+
+
+/* --- WINDOW CONTROLS (hide X, minimize, maximize) --- */
+.titlebar-buttonbox-container,
+.titlebar-buttons,
+.titlebar-button {
+  display: none !important;
+}
+
+
+/* --- COMPACT TOOLBAR --- */
+:root {
+  --tab-min-height: 30px !important;
+  --toolbar-field-focus-border-color: transparent !important;
+}
+
+#nav-bar {
+  padding-block: 2px !important;
+}
+
+
+/* --- HIDE SITE IDENTITY ICON --- */
+#identity-box,
+#identity-icon,
+#identity-icon-label,
+#identity-icon-labels,
+#tracking-protection-icon-container,
+#page-proxy-favicon,
+#trust-icon,
+#trust-icon-container {
+  display: none !important;
+  visibility: collapse !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+#urlbar[pageproxystate] #identity-box {
+  display: none !important;
+  visibility: collapse !important;
+}
+
+.urlbar-input-container #identity-box {
+  display: none !important;
+}
+
+
+/* --- CLEAN URL BAR --- */
+#urlbar {
+  border-radius: 6px !important;
+}
+
+#urlbar:not([focused]) .urlbar-background {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+#urlbar[focused] .urlbar-background {
+  box-shadow: none !important;
+}
+
+
+/* --- HIDE RELOAD BUTTON --- */
+#reload-button {
+  display: none !important;
+}
+
+
+/* --- HIDE BACK/FORWARD BUTTONS --- */
+#back-button,
+#forward-button {
+  display: none !important;
+}
+
+
+/* --- MINIMAL BOOKMARKS TOOLBAR --- */
+#PersonalToolbar {
+  padding-block: 2px !important;
+  margin-top: 0 !important;
+  font-size: 12px !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+#personal-bookmarks .bookmark-item image,
+#PersonalToolbar .bookmark-item > .toolbarbutton-icon {
+  margin-block: auto !important;
+}
+
+#PlacesToolbarItems {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  align-items: center !important;
+}
+
+/* Center the bookmarks container under the URL bar */
+#personal-bookmarks {
+  display: flex !important;
+  justify-content: center !important;
+  flex: 1 !important;
+}
+
+
+/* --- HIDE HORIZONTAL TAB BAR --- */
+#TabsToolbar {
+  display: none !important;
+}
+
+
+/* --- VERTICAL TABS (auto-hide overlay) --- */
+
+#sidebar-box {
+  min-width: 2px !important;
+  max-width: 2px !important;
+  position: relative !important;
+  z-index: 10 !important;
+  transition: min-width 0.2s ease, max-width 0.2s ease, margin 0.2s ease !important;
+}
+
+#sidebar-box:hover {
+  min-width: 200px !important;
+  max-width: 200px !important;
+  margin-inline-end: -198px !important;
+}
+
+#sidebar-header,
+#sidebar-switcher-target,
+#sidebar-close-button,
+#sidebar-launcher,
+.sidebar-launcher,
+.sidebar-panel-footer,
+.sidebar-bottom-actions,
+.tools-and-extensions {
+  display: none !important;
+}
+
+#sidebar {
+  border-inline-end: none !important;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.15) !important;
+}
+
+/* Remove leftover separator from removed bottom icons */
+#sidebar-tools-and-extensions-splitter,
+#sidebar hr,
+#sidebar .separator,
+#sidebar-box hr,
+#sidebar-box .separator {
+  display: none !important;
+  border: none !important;
+}
+
+
+/* --- HIDE TITLE BAR --- */
+#titlebar {
+  display: none !important;
+}
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New Tab</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --card-bg: #1a1a1a;
+      --card-hover: #222;
+      --text: #e0e0e0;
+      --subtext: #888;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f5f5;
+        --card-bg: #fff;
+        --card-hover: #f0f0f0;
+        --text: #111;
+        --subtext: #888;
+        --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      }
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 140px);
+      gap: 16px;
+      padding: 32px;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 12px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    a:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .favicon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    .label {
+      font-size: 12px;
+      text-align: center;
+      color: var(--subtext);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 110px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <a href="https://secure.scotiabank.com/accounts?lng=en">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=scotiabank.com&sz=64" alt="">
+      <span class="label">Scotiabank</span>
+    </a>
+    <a href="https://my.wealthsimple.com/app/home">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=wealthsimple.com&sz=64" alt="">
+      <span class="label">Wealthsimple</span>
+    </a>
+    <a href="https://www.blossomsocial.com/">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=blossomsocial.com&sz=64" alt="">
+      <span class="label">Blossom</span>
+    </a>
+    <a href="https://manus.im/login?type=signIn&redirectUrl=%2Fapp">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=manus.im&sz=64" alt="">
+      <span class="label">Manus</span>
+    </a>
+    <a href="https://calendar.google.com/calendar/u/0/r">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=calendar.google.com&sz=64" alt="">
+      <span class="label">Calendar</span>
+    </a>
+    <a href="https://canvas.ubc.ca/">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=canvas.ubc.ca&sz=64" alt="">
+      <span class="label">Canvas</span>
+    </a>
+    <a href="https://webmail.porkbun.com/?_task=mail&_mbox=INBOX">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=porkbun.com&sz=64" alt="">
+      <span class="label">SummitCare Inbox</span>
+    </a>
+    <a href="https://claude.ai/">
+      <img class="favicon" src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt="">
+      <span class="label">Claude</span>
+    </a>
+  </div>
+</body>
+</html>
