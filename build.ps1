@@ -12,6 +12,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 $zip = [System.IO.Compression.ZipFile]::Open($xpiPath, [System.IO.Compression.ZipArchiveMode]::Create)
 [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, "$extDir\manifest.json", "manifest.json", [System.IO.Compression.CompressionLevel]::Optimal)
 [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, "$extDir\newtab.html", "newtab.html", [System.IO.Compression.CompressionLevel]::Optimal)
+[System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, "$extDir\newtab.js", "newtab.js", [System.IO.Compression.CompressionLevel]::Optimal)
 Get-ChildItem "$extDir\icons" -File | ForEach-Object {
     [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, "icons/$($_.Name)", [System.IO.Compression.CompressionLevel]::Optimal)
 }
