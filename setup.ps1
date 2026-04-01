@@ -46,17 +46,17 @@ Write-Host "Copied userChrome.css"
 Copy-Item "$scriptDir\user.js" "$profilePath\user.js" -Force
 Write-Host "Copied user.js"
 
-# Extension (signed .xpi) -- disabled for CSS-only testing
-# $xpiPath = "$scriptDir\extension\newtab-signed.xpi"
-# if (Test-Path $xpiPath) {
-#     $extensionsPath = "$profilePath\extensions"
-#     New-Item -ItemType Directory -Force $extensionsPath | Out-Null
-#     Copy-Item $xpiPath "$extensionsPath\newtab@georg-davidson-firefox.xpi" -Force
-#     Write-Host "Installed new tab extension"
-# } else {
-#     Write-Warning "extension\newtab-signed.xpi not found - skipping new tab setup."
-#     Write-Warning "See README.md for how to sign and add the extension."
-# }
+# Extension (signed .xpi)
+$xpiPath = "$scriptDir\extension\newtab-signed.xpi"
+if (Test-Path $xpiPath) {
+    $extensionsPath = "$profilePath\extensions"
+    New-Item -ItemType Directory -Force $extensionsPath | Out-Null
+    Copy-Item $xpiPath "$extensionsPath\newtab@georg-davidson-firefox.xpi" -Force
+    Write-Host "Installed new tab extension"
+} else {
+    Write-Warning "extension\newtab-signed.xpi not found - skipping new tab setup."
+    Write-Warning "See README.md for how to sign and add the extension."
+}
 
 Write-Host ""
 Write-Host "Done. Restart Firefox to apply all changes."

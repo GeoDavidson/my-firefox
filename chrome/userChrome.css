@@ -54,7 +54,14 @@
 #trust-icon,
 #trust-icon-container,
 #star-button-box,
-#taskbar-tabs-button {
+#taskbar-tabs-button,
+#urlbar-searchmode-switcher {
+  display: none !important;
+}
+
+
+/* --- HIDE URL BAR DROPDOWN --- */
+.urlbarView {
   display: none !important;
 }
 
