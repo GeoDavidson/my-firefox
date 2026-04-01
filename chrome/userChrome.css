@@ -24,7 +24,6 @@
 
 .titlebar-close:hover {
   background-color: rgba(232, 17, 35, 0.9) !important;
-  opacity: 1 !important;
 }
 
 .titlebar-min:hover,
@@ -57,7 +56,6 @@
 #star-button-box,
 #taskbar-tabs-button {
   display: none !important;
-  visibility: collapse !important;
 }
 
 
