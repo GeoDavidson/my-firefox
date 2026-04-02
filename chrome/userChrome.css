@@ -45,7 +45,16 @@
 
 
 /* --- HIDE URL BAR ICONS --- */
-#identity-box,
+/* NOTE: #identity-box must NOT use display:none — it anchors the permission
+   doorhanger popup (microphone, camera, etc.). Hide its contents instead. */
+#identity-box {
+  overflow: hidden !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 #identity-icon,
 #identity-icon-label,
 #identity-icon-labels,
@@ -55,7 +64,8 @@
 #trust-icon-container,
 #star-button-box,
 #taskbar-tabs-button,
-#urlbar-searchmode-switcher {
+#urlbar-searchmode-switcher,
+.urlbar-go-button {
   display: none !important;
 }
 
