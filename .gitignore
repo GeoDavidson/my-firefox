@@ -1,2 +1,5 @@
 # Unsigned package (only the signed version gets committed)
 extension/newtab.xpi
+
+# Local Claude Code settings
+.claude/
