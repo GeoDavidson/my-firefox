@@ -42,15 +42,6 @@ function render(bookmarks) {
     grid.append(a);
   }
 
-  const n = bookmarks.length;
-  let cols = 1, bestDiff = Infinity;
-  for (let c = 1; c <= n; c++) {
-    if (n % c === 0) {
-      const diff = Math.abs(c - n / c);
-      if (diff < bestDiff) { bestDiff = diff; cols = Math.max(c, n / c); }
-    }
-  }
-  grid.style.gridTemplateColumns = `repeat(${cols}, 140px)`;
 }
 
 for (const ev of ['onCreated', 'onRemoved', 'onChanged', 'onMoved']) {
