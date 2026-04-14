@@ -1,5 +1,6 @@
-# Unsigned package (only the signed version gets committed)
+# Build artifacts — upload to AMO, distribute signed builds via GitHub Releases
 extension/newtab.xpi
+extension/newtab-signed.xpi
 
 # Local Claude Code settings
 .claude/
