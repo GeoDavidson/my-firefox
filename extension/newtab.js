@@ -1,9 +1,10 @@
 const TOOLBAR_FOLDER_ID = "toolbar_____";
 const FALLBACK_ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E";
 
+// Google faviconV2 resolves the full URL, so subdomains (calendar.google.com vs
+// drive.google.com) get their own icons instead of the shared root-domain one.
 function faviconUrl(url) {
-  try { return `https://icons.duckduckgo.com/ip3/${new URL(url).hostname}.ico`; }
-  catch (_) { return FALLBACK_ICON; }
+  return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(url)}&size=64`;
 }
 
 async function loadToolbar() {
@@ -16,7 +17,6 @@ function render(bookmarks) {
   grid.innerHTML = '';
 
   if (bookmarks.length === 0) {
-    grid.style.gridTemplateColumns = '';
     const hint = document.createElement('p');
     hint.className = 'empty-hint';
     hint.textContent = 'Add bookmarks to your Bookmarks Toolbar and they\'ll appear here. Press Ctrl+Shift+B to show the toolbar.';

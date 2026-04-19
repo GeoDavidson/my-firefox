@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.5 — 2026-04-19
+
+- Custom page now overrides homepage and new windows — selectable as "My New Tab" in about:preferences#home
+- Bookmark grid capped at 5 icons per row, each row independently centered
+- Favicons use Google faviconV2 — subdomains now get their own icons (e.g. Google Calendar vs Google Drive)
+
 ## v2.4 — 2026-04-18
 
 - Fixed bookmark grid layout — dynamic auto-fit columns with scrollable overflow

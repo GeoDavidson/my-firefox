@@ -43,15 +43,17 @@
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 140px);
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 16px;
       padding: 32px;
       width: 100%;
+      max-width: calc(5 * 140px + 4 * 16px + 2 * 32px); /* 828px — 5 cols max */
     }
 
     a {
+      width: 140px;
       display: flex;
       flex-direction: column;
       align-items: center;
