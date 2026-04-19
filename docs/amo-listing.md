@@ -77,4 +77,4 @@ https://github.com/GeoDavidson/my-firefox
 
 ## Notes for AMO reviewers (paste into the Notes to Reviewer field)
 
-This is a straightforward new-tab override. It reads the Firefox Bookmarks Toolbar folder (`toolbar_____`) via `browser.bookmarks.getChildren` and renders bookmark cards. Favicons are fetched from `https://icons.duckduckgo.com/ip3/<hostname>.ico` — this is a cosmetic GET request and no user data is sent. The source ships unminified; no build step is required to read it. All code is in `newtab.js` (61 lines).
+This is a straightforward new-tab override. It reads the Firefox Bookmarks Toolbar folder (`toolbar_____`) via `browser.bookmarks.getChildren` and renders bookmark cards. Favicons are fetched from `https://icons.duckduckgo.com/ip3/<hostname>.ico` — this is a cosmetic GET request and no user data is sent. The source ships unminified; no build step is required to read it. All code is in `newtab.js` (51 lines).

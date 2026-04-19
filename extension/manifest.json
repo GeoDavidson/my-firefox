@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "My New Tab",
-  "version": "2.3",
+  "version": "2.4",
   "description": "Replaces the new tab page with a live grid of your Bookmarks Toolbar.",
   "icons": {
     "48": "icons/icon-48.png",

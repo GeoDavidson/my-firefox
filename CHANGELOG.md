@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.4 — 2026-04-18
+
+- Fixed bookmark grid layout — dynamic auto-fit columns with scrollable overflow
+- Simplified userChrome.css — hide only 4 UI elements
+
 ## v2.3 — 2026-04-14
 
 - Replaced hard-coded bookmark tiles with a live grid driven by the Firefox Bookmarks Toolbar
