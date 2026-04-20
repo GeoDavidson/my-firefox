@@ -11,6 +11,12 @@ Minimal Firefox setup. Clone and run one script.
 
 Or install the extension directly from [Firefox Add-ons (addons.mozilla.org)](https://addons.mozilla.org/firefox/addon/my-new-tab/).
 
+Or
+```
+PS C:\users\georg\source\my-firefox-main> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:\users\georg\source\my-firefox-main> .\setup.ps1
+```
+
 ## Commands
 
 | Script      | What it does                                                       |
